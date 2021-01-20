@@ -14,11 +14,9 @@
 
 這裡使用setvbuf(stdout, 0, 2, 0)設定為無緩衝
 
-## Solve
+### Global variable
 
-### 分析
-
-有兩個input，其中`name`為全域變數存放在BSS區段，而`buf`則存放在stack中
+global variable的address會是固定的
 
 ### how to find offest
 
@@ -27,6 +25,21 @@ from pwn import *
 cyclic(100)
 
 cyclic_find("<return overflow string>")
+
+### nm 指令
+
+顯示關於對象文件、可執行文件以及對象文件庫裏的符號信息。
+故我們可以用 `nm ./ret2sc` 找到name這個global variable的位置
+
+或是用`gdb% x/x &name`也可以
+
+## Solve
+
+### 分析
+
+1. 先用checksec檢查，發現NX是關的，代表他是可寫且可執行
+2. 有兩個input，其中`name`為全域變數存放在BSS區段，而`buf`則存放在stack中
+3. 利用pwn找到offset是32 ( 到return的距離 )
 
 ### 解題策略
 
