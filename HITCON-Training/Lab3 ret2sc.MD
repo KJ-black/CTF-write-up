@@ -1,3 +1,5 @@
+## 先備知識
+
 ### setvbuf()
 
 `int setvbuf(FILE *stream, char *buffer, int mode, size_t size)`
