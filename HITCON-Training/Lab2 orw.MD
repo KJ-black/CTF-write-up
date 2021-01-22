@@ -6,7 +6,7 @@
 
 system call function, eax, ebx, ecx, edx
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b7b658a-1e8c-4c3f-8221-7d663eb98134/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b7b658a-1e8c-4c3f-8221-7d663eb98134/Untitled.png)
+![imgae](https://github.com/KJ-black/CTF-write-up/blob/main/HITCON-Training/jpg/row.png)
 
 ### prctl() process control
 
