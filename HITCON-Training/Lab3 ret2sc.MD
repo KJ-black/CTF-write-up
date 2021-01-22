@@ -20,18 +20,22 @@ global variable的address會是固定的
 
 ### how to find offest
 
-from pwn import *
+>>> from pwn import *
+>>> cyclic(100)
 
-cyclic(100)
-
-cyclic_find("<return overflow string>")
+>>> cyclic_find("<return overflow string>")
 
 ### nm 指令
 
 顯示關於對象文件、可執行文件以及對象文件庫裏的符號信息。
-故我們可以用 `nm ./ret2sc` 找到name這個global variable的位置
 
-或是用`gdb% x/x &name`也可以
+- 故我們可以用 `nm ./ret2sc` 找到name這個global variable的位置
+- 或是用`gdb% x/x &name`也可以
+
+## Return to Shellcode
+
+1. 將要執行的shellcode寫入可寫且可執行的變數中
+2. 利用BOF return跳至該變數
 
 ## Solve
 
