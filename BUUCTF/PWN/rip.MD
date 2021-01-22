@@ -12,15 +12,15 @@
 
 2. 再用r2的afl看看有哪些function，結果看到可疑的sym.fun，於是點進去看看
 
-    ![image](https://github.com/KJ-black/CTF-write-up/blob/main/BUUCTF/PWN/jpg/rip/Untitled1.png)
+    ![image](https://github.com/KJ-black/CTF-write-up/blob/main/BUUCTF/PWN/jpg/rip/Untitled%201.png)
 
 3. 可以看到裡面直接call了system("/bin/sh")，正是我們的目標，於是我們用disas fun找到fun function的address
 
-    ![image](https://github.com/KJ-black/CTF-write-up/blob/main/BUUCTF/PWN/jpg/rip/Untitled2.png)
+    ![image](https://github.com/KJ-black/CTF-write-up/blob/main/BUUCTF/PWN/jpg/rip/Untitled%202.png)
 
 ### exp 1
 
-![image](https://github.com/KJ-black/CTF-write-up/blob/main/BUUCTF/PWN/jpg/rip/Untitled3.png)
+![image](https://github.com/KJ-black/CTF-write-up/blob/main/BUUCTF/PWN/jpg/rip/Untitled%203.png)
 
 ```python
 from pwn import *
