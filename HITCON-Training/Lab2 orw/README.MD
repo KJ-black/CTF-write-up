@@ -6,15 +6,11 @@
 
 system call function, eax, ebx, ecx, edx
 
-![imgae](https://github.com/KJ-black/CTF-write-up/blob/main/HITCON-Training/jpg/row.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b7b658a-1e8c-4c3f-8221-7d663eb98134/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b7b658a-1e8c-4c3f-8221-7d663eb98134/Untitled.png)
 
 ### prctl() process control
 
 可以對process進行一些設置，可以限制process的系統調用
-
-### .bss address
-
-0804A040
 
 ### assembly code
 
