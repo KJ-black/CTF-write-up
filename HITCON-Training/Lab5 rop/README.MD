@@ -1,4 +1,4 @@
-# Lab5 rob
+# Lab5 rop
 
 ## 先備知識
 
@@ -11,7 +11,7 @@
 - 用flat()前要先指定x86或是x64，若為x86則`context.arch="i386"`
 - `flat([0x1234, 0x5678])` 等於 `p32(0x1234)+p32(0x5678)`
 
-## simple ROB
+## simple ROP
 
 execve("/bin/sh", NULL, NULL)
 
@@ -24,7 +24,7 @@ eax=0xb, ebx=address of "/bin/sh", ecx=0, edx=0
 ## Solve
 
 1. file <binary> 先看他是否為static linking
-2. ROBgadget - -binary <binary> > dump 將gadget dump下來等等可以查看
+2. ROPgadget - -binary <binary> > dump 將gadget dump下來等等可以查看
 3. 找BOF return offset → 32，並且只能再塞68bytes gadget
 4. gdb$ readelf 找buffer → .bss = 0x80eaf80, .data = 0x80ea060
 5. write to memory
